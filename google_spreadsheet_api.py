@@ -16,8 +16,8 @@ def read_from_sheet(work_book_name, sheet_index, row_start_index, row_end_index)
     sheet = wks.worksheets()[sheet_index]
     no_of_rows = row_end_index - row_start_index
     required_values = []
-    for i in range(no_of_products):
-        row_number = i+product_list_start_row_index
+    for i in range(no_of_rows):
+        row_number = i+row_start_index
         values = sheet.row_values(row_number)
         required_values.append(values)
     return required_values
